@@ -2,6 +2,7 @@
 <classpath>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8">
 		<attributes>
+			<attribute name="module" value="true"/>
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
@@ -23,5 +24,18 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/5"/>
+	<classpathentry kind="lib" path="C:/Users/chana/Desktop/poi/lib/commons-codec-1.15.jar"/>
+	<classpathentry kind="lib" path="C:/Users/chana/Desktop/poi/lib/commons-collections4-4.4.jar"/>
+	<classpathentry kind="lib" path="C:/Users/chana/Desktop/poi/lib/commons-io-2.11.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/chana/Desktop/poi/lib/commons-math3-3.6.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/chana/Desktop/poi/lib/log4j-api-2.18.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/chana/Desktop/poi/lib/SparseBitSet-1.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/chana/Desktop/poi/ooxml-lib/commons-compress-1.21.jar"/>
+	<classpathentry kind="lib" path="C:/Users/chana/Desktop/poi/ooxml-lib/commons-logging-1.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/chana/Desktop/poi/ooxml-lib/curvesapi-1.07.jar"/>
+	<classpathentry kind="lib" path="C:/Users/chana/Desktop/poi/ooxml-lib/jakarta.activation-2.0.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/chana/Desktop/poi/ooxml-lib/jakarta.xml.bind-api-3.0.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/chana/Desktop/poi/ooxml-lib/slf4j-api-1.7.36.jar"/>
+	<classpathentry kind="lib" path="C:/Users/chana/Desktop/poi/ooxml-lib/xmlbeans-5.1.1.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

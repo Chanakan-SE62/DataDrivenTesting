@@ -19,7 +19,7 @@ class UC1CheckLogin {
 
 	@Test
 	void testCheckLogin() throws Exception {
-		System.setProperty("webdriver.chrome.driver", "C:\\chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", "C:/chromedriver.exe");
 
 	    SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");  
 	    Date date = new Date();  
@@ -35,33 +35,33 @@ class UC1CheckLogin {
 		int row = sheet.getLastRowNum()+1;
 		//System.out.println(row);
 		
+
 		for(int i = 1; i<row; i++) {
 			WebDriver driver = new ChromeDriver();
 			driver.get("https://katalon-demo-cura.herokuapp.com/");
 			driver.findElement(By.id("btn-make-appointment")).click();
-			String testcaseid = sheet.getRow(i).getCell(0).toString();
-			String username;
-			String password;
-			if(testcaseid.equals("tc104")) {
-				username = "";
-				password = "";
+			String Test_Case_ID = sheet.getRow(i).getCell(0).toString();
+			String Username;
+			String Password;
+			if(Test_Case_ID.equals("tc104")) {
+				Username = "";
+				Password = "";
 			}else {
-				username = sheet.getRow(i).getCell(1).toString();			
-				password = sheet.getRow(i).getCell(2).toString();		
+				Username = sheet.getRow(i).getCell(1).toString();			
+				Password = sheet.getRow(i).getCell(2).toString();		
 			}
-			driver.findElement(By.id("txt-username")).sendKeys(username);
-			driver.findElement(By.id("txt-password")).sendKeys(password);
+			driver.findElement(By.id("txt-username")).sendKeys(Username);
+			driver.findElement(By.id("txt-password")).sendKeys(Password);
 			driver.findElement(By.id("btn-login")).click();
 			
-			if(testcaseid.equals("tc101")) {
+			if(Test_Case_ID.equals("TC101")) {
 				//System.out.println("tc101");
-				String actual = driver.findElement(By.xpath("/html/body/section/div/div/div/h2")).getText();
-				String expected = sheet.getRow(i).getCell(3).toString();
+				String Actual = driver.findElement(By.xpath("/html/body/section/div/div/div/h2")).getText();
+				String Expected = sheet.getRow(i).getCell(3).toString();
 				Row rows = sheet.getRow(i);
 				Cell cell = rows.createCell(4);
-				cell.setCellValue(actual);
-				assertEquals(expected,actual);
-				if(actual.equals(expected)) {
+				cell.setCellValue(Actual);
+				if(Actual.equals(Expected)) {
 					Cell cell2 = rows.createCell(5);
 					cell2.setCellValue("Pass");
 				}else {
@@ -75,13 +75,12 @@ class UC1CheckLogin {
 				FileOutputStream fos = new FileOutputStream(path);
 				workbook.write(fos);
 			} else {
-				String actual = driver.findElement(By.xpath("/html/body/section/div/div/div[1]/p[2]")).getText();
-				String expected = sheet.getRow(i).getCell(3).toString();
+				String Actual = driver.findElement(By.xpath("/html/body/section/div/div/div[1]/p[2]")).getText();
+				String Expected = sheet.getRow(i).getCell(3).toString();
 				Row rows = sheet.getRow(i);
 				Cell cell = rows.createCell(4);
-				cell.setCellValue(actual);
-				assertEquals(expected,actual);
-				if(actual.equals(expected)) {
+				cell.setCellValue(Actual);
+				if(Actual.equals(Expected)) {
 					Cell cell2 = rows.createCell(5);
 					cell2.setCellValue("Pass");
 				}else {
@@ -93,10 +92,16 @@ class UC1CheckLogin {
 				Cell cell4 = rows.createCell(7);
 				cell4.setCellValue(testerName);				
 				FileOutputStream fos = new FileOutputStream(path);
-				workbook.write(fos);				
+				workbook.write(fos);
+				
 			}
 			driver.close();
+			System.out.println("ID = "+Test_Case_ID);
+			System.out.println("ͼҹ = "+Username);
+			System.out.println("ʼҹ = "+Password);
+			
 		}
+		System.out.println("TestData Successfully");
 	
 	}
 
